@@ -36,11 +36,11 @@ const Weather = () => {
       <div className={styles.list}>
         {weatherData.map((daily, index) => (
           <div key={index} className={styles.card}
-            style={{backgroundImage: `url(${getWeatherCardBackground(daily.values.weatherCodeMax)})` }}>
-            <h2>{new Date(daily.time).toDateString()}</h2>
-            <p>{daily.values.temperatureMax}°C - {daily.values.temperatureMin}°C</p>
-            <p>{getWeatherDescription(daily.values.weatherCodeMax)}</p>
-            <p>Precipitation Probability: {daily.values.precipitationProbabilityAvg}%</p>
+            style={{ backgroundImage: `url(${getWeatherCardBackground(daily.values.weatherCodeMax)})` }}>
+            <h2 className={styles.text}>{new Date(daily.time).toDateString()}</h2>
+            <p className={styles.text}>{daily.values.temperatureMax}°C - {daily.values.temperatureMin}°C</p>
+            <p className={styles.text}>{getWeatherDescription(daily.values.weatherCodeMax)}</p>
+            <p className={styles.text}>Precipitation Probability: {daily.values.precipitationProbabilityAvg}%</p>
           </div>
         ))}
       </div>
