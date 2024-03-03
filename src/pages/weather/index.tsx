@@ -15,8 +15,8 @@ export const Weather = () => {
 
   return (
     <div className={style.container}>
-      <h2>Weather Forecast</h2>
-      <h3>Barcelona, Spain</h3>
+      <div className={style.title}>Weather Forecast</div>
+      <div className={style.subtitle}>Barcelona, Spain</div>
       <div className={style.list}>
         {weatherData.map((daily, index) => (
           <Card index={index} data={daily} />

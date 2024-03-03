@@ -2,7 +2,7 @@
     border: 0.3px solid #868686;
     border-radius: 8px;
     width: 100px;
-    height: 400px;
+    /* height: 200px; */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -23,30 +23,37 @@
 .title {
     font-size: 1.5rem;
     font-weight: bold;
-    text-shadow: 1px 1px 1px #000;
+    text-shadow: 0 0 1px #000;
 }
 
 .maxTemp {
+    display: inline-block;
     font-size: 1.2rem;
-    text-shadow: 0.5px 0.5px 0.5px #000;
+    text-shadow: 0 0 0.5px #000;
 }
 
 .minTemp {
-    font-size: 0.9rem;
-    text-shadow: 0.5px 0.5px 0.5px gray;
+    margin-left: 5px;
+    display: inline-block;
+    font-size: 0.8rem;
+    text-shadow: 0 0 0.5px gray;
     color: gray;
+}
+
+.miniInfo {
+    margin-top: 10px;
 }
 
 .rainInfo {
     font-size: 0.8rem;
     font-weight: bold;
     color: rgb(0, 17, 255);
-    text-shadow: 0.5px 0.5px 0.5px #000;
+    text-shadow: 0 0 3px #ffffff;
 }
 
 .windInfo {
     font-size: 0.8rem;
     font-weight: bold;
-    color: rgb(245, 239, 205);
-    text-shadow: 0.5px 0.5px 0.5px #000;
+    color: rgb(243, 252, 0);
+    text-shadow: 0 0 3px #000;
 }

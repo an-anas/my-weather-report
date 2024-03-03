@@ -52,6 +52,32 @@ const weatherImages: Record<number, string> = {
     8000: "thunderstorm.jpg"
 };
 
+const weatherIcons: Record<number, string> = {
+    0: "❓",
+    1000: "☀️",
+    1100: "🌤️",
+    1101: "⛅",
+    1102: "☁️",
+    1001: "☁️",
+    2000: "🌫️",
+    2100: "🌁",
+    4000: "🌦️",
+    4001: "🌧️",
+    4200: "🌦️",
+    4201: "🌧️",
+    5000: "❄️",
+    5001: "🌨️",
+    5100: "🌨️",
+    5101: "❄️",
+    6000: "🌧️❄️",
+    6001: "🌧️❄️",
+    6200: "🌧️❄️",
+    6201: "🌧️❄️",
+    7000: "🌧️❄️",
+    7101: "🌧️",
+    7102: "🌧️",
+    8000: "⛈️"
+};
 
 export function getWeatherDescription(code: number): string {
     return weatherDescriptions[code] || '';
@@ -59,4 +85,8 @@ export function getWeatherDescription(code: number): string {
 
 export const getWeatherCardBackground = (code: number): string => {
     return weatherImages[code] || '';
+};
+
+export const getWeatherIcon = (code: number): string => {
+    return weatherIcons[code] || '';
 };

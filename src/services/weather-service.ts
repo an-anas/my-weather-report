@@ -1,23 +1,23 @@
 const WeatherService = {
     fetchData: async () => {
         try {
-            const apiUrl = import.meta.env.VITE_WEATHER_RAPIDAPI_HOST;
+            const apiUrl = import.meta.env.VITE_WEATHER_API_URL;
             const queryParams = new URLSearchParams({
-                location: '41.4, 2.2',
+                location: '41.38222,+2.17701',
                 timesteps: 'daily',
                 units: 'metric'
             });
             const baseUrl = `${apiUrl}/v4/weather/forecast`;
             const url = `${baseUrl}?${queryParams.toString()}`;
 
-            const options = {};
-            // {
-            //     method: 'GET',
-            //     headers: {
-            //         'X-RapidAPI-Host': apiUrl,
-            //         'X-RapidAPI-Key': import.meta.env.VITE_WEATHER_RAPIDAPI_KEY
-            //     }
-            // };
+            const options = 
+            {
+                method: 'GET',
+                headers: {
+                    'X-RapidAPI-Host': import.meta.env.VITE_WEATHER_X_RAPIDAPI_HOST,
+                    'X-RapidAPI-Key': import.meta.env.VITE_WEATHER_X_RAPIDAPI_KEY
+                }
+            };
 
             const response = await fetch(url, options);
 

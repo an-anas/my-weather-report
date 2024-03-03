@@ -1,0 +1,31 @@
+.icon {
+    position: relative;
+    display: inline-block;
+    font-size: 2rem;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica,
+        Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  }
+  
+  /* Tooltip text */
+  .icon::after {
+    content: attr(data-tooltip-text);
+    width: max-content;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #e7e7e7e7;
+    color: #000000;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 1rem;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease;
+  }
+  
+  /* Show the tooltip on hover */
+  .icon:hover::after {
+    opacity: 1;
+  }
+  
