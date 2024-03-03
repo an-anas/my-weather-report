@@ -1,51 +1,27 @@
 import { useEffect, useState } from 'react';
-import styles from './style.module.css';
-import { getWeatherCardBackground, getWeatherDescription } from '@/models/weather-code-description';
 import { WeatherData } from '@/models/weather-data';
+import WeatherService from '@/services/weather-service';
+import { Card } from '@/components/card';
+import style from './style.module.css';
 
-
-const Weather = () => {
+export const Weather = () => {
   const [weatherData, setWeatherData] = useState<WeatherData[]>([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(
-          'http://localhost:8000/api/weather' // Replace with the actual API URL
-        );
-
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-
-        const data = await response.json();
-        const dailyTimelines: WeatherData[] = data.timelines.daily;
-
-        setWeatherData(dailyTimelines);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-
-    fetchData();
+    WeatherService.fetchData()
+      .then(dailyTimelines => setWeatherData(dailyTimelines))
+      .catch(error => console.error('Error fetching weather data:', error));
   }, []);
 
   return (
-    <div className={styles.container}>
-      <h1>Weather Forecast</h1>
-      <div className={styles.list}>
+    <div className={style.container}>
+      <h2>Weather Forecast</h2>
+      <h3>Barcelona, Spain</h3>
+      <div className={style.list}>
         {weatherData.map((daily, index) => (
-          <div key={index} className={styles.card}
-            style={{ backgroundImage: `url(${getWeatherCardBackground(daily.values.weatherCodeMax)})` }}>
-            <h2 className={styles.text}>{new Date(daily.time).toDateString()}</h2>
-            <p className={styles.text}>{daily.values.temperatureMax}°C - {daily.values.temperatureMin}°C</p>
-            <p className={styles.text}>{getWeatherDescription(daily.values.weatherCodeMax)}</p>
-            <p className={styles.text}>Precipitation Probability: {daily.values.precipitationProbabilityAvg}%</p>
-          </div>
+          <Card index={index} data={daily} />
         ))}
       </div>
     </div>
   );
 };
-
-export default Weather;

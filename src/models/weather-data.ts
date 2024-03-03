@@ -5,6 +5,6 @@ export interface WeatherData {
         temperatureMin: number;
         weatherCodeMax: number;
         precipitationProbabilityAvg: number;
-        // Add other properties as needed
+        windSpeedAvg: number;
     };
 }

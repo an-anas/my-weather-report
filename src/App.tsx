@@ -1,10 +1,14 @@
+import { Weather } from './pages/weather';
 import './App.css';
-import Weather from './pages/weather';
+
 
 function App() {
   return (
-    <div className="App">
-      <Weather />
+    <div className="container">
+      <div className="background"></div>
+      <div className="content">
+        <Weather />
+      </div>
     </div>
   );
 }

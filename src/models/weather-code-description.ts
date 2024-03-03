@@ -1,4 +1,4 @@
-const weatherDescriptions: Record<number,string> = {
+const weatherDescriptions: Record<number, string> = {
     0: "Unknown",
     1000: "Clear, Sunny",
     1100: "Mostly Clear",
@@ -25,7 +25,7 @@ const weatherDescriptions: Record<number,string> = {
     8000: "Thunderstorm"
 };
 
-const weatherImages: Record<number,string> = {
+const weatherImages: Record<number, string> = {
     0: "unknown.jpg",
     1000: "clear_sunny.jpg",
     1100: "mostly_clear.jpg",
@@ -50,8 +50,8 @@ const weatherImages: Record<number,string> = {
     7101: "heavy_ice_pellets.jpg",
     7102: "light_ice_pellets.jpg",
     8000: "thunderstorm.jpg"
-  };
-  
+};
+
 
 export function getWeatherDescription(code: number): string {
     return weatherDescriptions[code] || '';
@@ -59,4 +59,4 @@ export function getWeatherDescription(code: number): string {
 
 export const getWeatherCardBackground = (code: number): string => {
     return weatherImages[code] || '';
-    };
+};

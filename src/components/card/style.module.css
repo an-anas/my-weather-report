@@ -1,0 +1,52 @@
+.card {
+    border: 0.3px solid #868686;
+    border-radius: 8px;
+    width: 100px;
+    height: 400px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 20px;
+    text-align: left;
+}
+
+.internal {
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding: 5px;
+    color: rgb(41, 76, 83);
+    background-color: rgba(255, 255, 255, 0.8);
+    font-size: 1.2rem;
+    height: 100%;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #000;
+}
+
+.maxTemp {
+    font-size: 1.2rem;
+    text-shadow: 0.5px 0.5px 0.5px #000;
+}
+
+.minTemp {
+    font-size: 0.9rem;
+    text-shadow: 0.5px 0.5px 0.5px gray;
+    color: gray;
+}
+
+.rainInfo {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: rgb(0, 17, 255);
+    text-shadow: 0.5px 0.5px 0.5px #000;
+}
+
+.windInfo {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: rgb(245, 239, 205);
+    text-shadow: 0.5px 0.5px 0.5px #000;
+}

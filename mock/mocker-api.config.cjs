@@ -1,5 +1,5 @@
-const mockData = require('./weather-data.json');
+const mockData = require('./varied.json');
 
 module.exports = {
-  '/api/weather': mockData,
+  '/v4/weather/forecast': mockData,
 };
