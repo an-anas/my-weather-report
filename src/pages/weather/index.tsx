@@ -1,27 +1,30 @@
-import { useEffect, useState } from 'react';
-import { WeatherData } from '@/models/weather-data';
-import WeatherService from '@/services/weather-service';
 import { Card } from '@/components/card';
 import style from './style.module.css';
+import useWeatherService from '@/services/weather-service';
+import { CitySearch } from '@/features/city-search';
+import { useState } from 'react';
 
 export const Weather = () => {
-  const [weatherData, setWeatherData] = useState<WeatherData[]>([]);
+  const [city, setCity] = useState({ name: 'Barcelona', country: 'Spain', latitude: 41.38222, longitude: 2.17701 });
+  const { isPending, error, data } = useWeatherService(`${city.latitude},${city.longitude}`, 'daily', 'metric');
 
-  useEffect(() => {
-    WeatherService.fetchData()
-      .then(dailyTimelines => setWeatherData(dailyTimelines))
-      .catch(error => console.error('Error fetching weather data:', error));
-  }, []);
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
 
   return (
     <div className={style.container}>
       <div className={style.title}>Weather Forecast</div>
-      <div className={style.subtitle}>Barcelona, Spain</div>
+      <div className={style.subtitle}>
+        {city.name}, {city.country}
+        <CitySearch setCity={setCity} />
+      </div>
       <div className={style.list}>
-        {weatherData.map((daily, index) => (
-          <Card index={index} data={daily} />
+        {data?.map((daily, index) => (
+          <Card key={index} index={index} data={daily} />
         ))}
       </div>
+      {isPending && <div>Loading...</div>}
     </div>
   );
 };

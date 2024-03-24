@@ -1,0 +1,53 @@
+{
+    "data": [
+      {
+        "id": 48381,
+        "wikiDataId": "Q103011",
+        "type": "CITY",
+        "city": "Corinth",
+        "name": "Corinth",
+        "country": "Greece",
+        "countryCode": "GR",
+        "region": "Peloponnese Region",
+        "regionCode": "J",
+        "regionWdId": "Q202484",
+        "latitude": 37.938611111,
+        "longitude": 22.927222222,
+        "population": 30816
+      },
+      {
+        "id": 118861,
+        "wikiDataId": "Q974334",
+        "type": "CITY",
+        "city": "Corinth",
+        "name": "Corinth",
+        "country": "United States of America",
+        "countryCode": "US",
+        "region": "Texas",
+        "regionCode": "TX",
+        "regionWdId": "Q1439",
+        "latitude": 33.1439,
+        "longitude": -97.0722,
+        "population": 22634
+      },
+      {
+        "id": 117074,
+        "wikiDataId": "Q1992093",
+        "type": "CITY",
+        "city": "Corinth",
+        "name": "Corinth",
+        "country": "United States of America",
+        "countryCode": "US",
+        "region": "Mississippi",
+        "regionCode": "MS",
+        "regionWdId": "Q1494",
+        "latitude": 34.937222222,
+        "longitude": -88.515277777,
+        "population": 14622
+      }
+    ],
+    "metadata": {
+      "currentOffset": 0,
+      "totalCount": 3
+    }
+  }
